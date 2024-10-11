@@ -56,3 +56,8 @@
     - préparation de la défense (mises au propre de toute mes notes, mes planning ...)
 
 # Vendredi 11 Octobre
+
+- Matinée:
+  - Définir les objectifs de la MVP
+- Après-Midi:
+  - Fait le Mirroring du repos
