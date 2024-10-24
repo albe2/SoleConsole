@@ -61,3 +61,19 @@
   - Définir les objectifs de la MVP
 - Après-Midi:
   - Fait le Mirroring du repos
+
+# Jeudi 16 Octobre
+- Journée:
+  - REDBULL Basement
+
+# Vendredi 17 Octobre
+- Matinée:
+    - Anglais
+- Après-Midi:
+    - Warmup Days
+
+# Jeudi 24 Octobre
+- Matinée:
+    - Rework des techno utilisées
+- Après-Midi:
+    - Set Up du projet
