@@ -77,3 +77,18 @@
     - Rework des techno utilisées
 - Après-Midi:
     - Set Up du projet
+
+# Vendredi 25 Octobre
+- Matinée:
+  - recherche et setup de mongo
+- Après-Midi:
+  - premier test sur svelt et comprehension du language
+
+# Jeudi 31 Octobre
+- Matinée:
+  - malade
+- Après-Midi:
+  - REX Corée
+
+# Vendredi 1 Novembre
+- Férier
