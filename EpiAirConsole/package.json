@@ -33,6 +33,7 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.12",
+    "@prisma/client": "^5.22.0",
     "qrcode": "^1.5.4"
   }
 }
