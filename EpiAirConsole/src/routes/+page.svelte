@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
     import { goto } from '$app/navigation';
+
+    let randomNumber: number;
+
+    randomNumber = Math.floor(Math.random() * 90000) + 10000;
 </script>
 
 
@@ -9,7 +13,7 @@
         <p> with ur freinds :) </p>
         <button
                 class="bg-emerald-600 rounded w-1/5"
-                on:click={() => goto('/session')}
+                on:click={() => goto(`/${randomNumber}`)}
         > Play </button>
     </div>
 </div>
