@@ -92,3 +92,15 @@
 
 # Vendredi 1 Novembre
 - Férier
+
+# Jeudi 7 Novembre
+- Dev Fest
+
+# Vendredi 8 Novembre
+- Matinée:
+  - mise en place des deux pages principales avec la genration d'un qrcode unique
+  - Défense -> (remontage de bretelles par guillaume)
+  - Retravail de mon CDC
+- Après-Midi:
+  - Set up de prisma et de versel pour la db et le deployement automatique de ma solution (schema user et session fait )
+  - Shéma pour le cdc réaliser plus qu'as mettre au propres les attendues pour le CDC
