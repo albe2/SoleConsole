@@ -103,4 +103,11 @@
   - Retravail de mon CDC
 - Après-Midi:
   - Set up de prisma et de versel pour la db et le deployement automatique de ma solution (schema user et session fait )
-  - Shéma pour le cdc réaliser plus qu'as mettre au propres les attendues pour le CDC
+  - J'ai decider de pas utiliser mongodb parce que j'avais trop de probleme à l'installer, et que ca me prenait trop de temps pour rien
+  - Prisma est un ORM (Object-Relational Mapping) moderne pour Node.js et TypeScript qui facilite l'interaction avec des bases de données en permettant de manipuler les données via des objets JavaScript au lieu d'écrire des requêtes SQL manuelles.
+  - Vercel est principalement conçu pour le déploiement d'applications front-end, mais on peut également héberger une base de données PostgreSQL via des services tiers, puis connecter mon application Vercel à cette base de données pour gérer mes données.
+  - Shéma (papier) pour le cdc réaliser plus qu'as mettre au propres les attendues pour le CDC
+# Jeudi 14 Novembre
+- Matinée:
+  - Réalisation de mes maquettes papier sur figma
+  - apres lecture des document envoyées par Guillaume concernant le CDC, je commence la refont complete de mon CDC afin d'avoir un CDC le plus proche possible d'un vrai. Objectif avoir finis le CDC complet d'ici la semaine pro
