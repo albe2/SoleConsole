@@ -107,7 +107,28 @@
   - Prisma est un ORM (Object-Relational Mapping) moderne pour Node.js et TypeScript qui facilite l'interaction avec des bases de données en permettant de manipuler les données via des objets JavaScript au lieu d'écrire des requêtes SQL manuelles.
   - Vercel est principalement conçu pour le déploiement d'applications front-end, mais on peut également héberger une base de données PostgreSQL via des services tiers, puis connecter mon application Vercel à cette base de données pour gérer mes données.
   - Shéma (papier) pour le cdc réaliser plus qu'as mettre au propres les attendues pour le CDC
+
 # Jeudi 14 Novembre
 - Matinée:
   - Réalisation de mes maquettes papier sur figma
   - apres lecture des document envoyées par Guillaume concernant le CDC, je commence la refont complete de mon CDC afin d'avoir un CDC le plus proche possible d'un vrai. Objectif avoir finis le CDC complet d'ici la semaine pro
+- Apres-midi:
+  - ecris le brouillon du cdc, en définnissant quel document quel schema j'allais ajouter comment les expliquer ...
+  - fin d'apres midi moins productive a alterner entre finir le brouillon et aider les tek1
+
+# Vendredi 15 Novembre
+- Matinée:
+  - le but du jour et d'avoir un premier jet complet du chaier des charges
+  - je passe donc en revue tous ce que je compte expliquer
+  - pour enfin commencer la redaction du cdc
+- Apres-midi:
+  - a 15h une grosse partie du chaier des charges est donc rediger, j'ai donc fait les partie Introduction et contexte du projet (je me suis beaucoup trop casser la tete pour rien, apres avoir discuter avec guillaume il fait faire un truc simple et efficace a ce niveaux ce que j'ai donc integrer), Description du projet et le debut des exigences Fonctionnelles et Non-Fonctionnelles
+  - fin d'apres midi j'ai donc finis la partie des Exigences, et bien entammé les Contraintes & Dépendances.
+
+# Jeudi 21 Novembre
+- Matinée:
+  - Avant de partir pour BPCE en entretien toutes la fin de matinée, j'ai finis de rediger les contraintes
+- Apres-midi:
+  - Retour d'entretien plus tard que prévue, j'ai finis l'entiereter du cdc, il ne manque que la patie sur les livrables et le planning dans la quel avant la redaction j'ai encroe quelques precision a avoir, je poserais mes question a la defense du lendemain.
+  - Objectif pour la fin d'apres midi: pouvoir enfin coder ( faire une home page potable avec le header et commencer la discution avec la db pour la creation de session )
+  - au final je n'ai pas coder pendant cet fin d'apres midi. . .
