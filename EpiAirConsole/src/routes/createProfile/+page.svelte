@@ -1,29 +1,30 @@
-<script lang="ts">
+<p> create profile page </p><script lang="ts">
     import {goto} from "$app/navigation";
 
     let inputValue: string = '';
 
     async function joinSession(): Promise<void> {
         try {
-            const response = await fetch('/API/joinSession', {
+            const response = await fetch('/API/createUser', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ sessionID: inputValue, username: localStorage.getItem('user') }),
+                body: JSON.stringify({ username: inputValue }),
             });
 
             if (!response.ok) {
                 const errorMessage = await response.json();
-                console.error('Failed to create session:', errorMessage);
-                alert('Failed to create session. Please try again.');
+                console.error('Failed to create user:', errorMessage);
+                alert('Failed to create User. Please try again.');
                 return;
             }
 
-            goto(`/${inputValue}`);
+            localStorage.setItem('user', JSON.stringify(response));
+            goto(`/joinSession`);
         } catch (error) {
             console.error('An error occurred:', error);
-            alert('An error occurred while creating the session. Please try again.');
+            alert('An error occurred while creating the User. Please try again.');
         }
     }
 </script>
@@ -32,7 +33,7 @@
     <input
             type="text"
             bind:value={inputValue}
-            placeholder="Enter something"
+            placeholder="Enter Pseudo"
             class="p-2 border rounded-md text-black"
     />
     <button
