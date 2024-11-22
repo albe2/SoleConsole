@@ -132,3 +132,8 @@
   - Retour d'entretien plus tard que prévue, j'ai finis l'entiereter du cdc, il ne manque que la patie sur les livrables et le planning dans la quel avant la redaction j'ai encroe quelques precision a avoir, je poserais mes question a la defense du lendemain.
   - Objectif pour la fin d'apres midi: pouvoir enfin coder ( faire une home page potable avec le header et commencer la discution avec la db pour la creation de session )
   - au final je n'ai pas coder pendant cet fin d'apres midi. . .
+
+# Vendredi 22 Novembre
+- Matinée:
+  - apres des galere a comprendre tailwind j'ai reussi a finir un premier jet de ma home page avec son background un un header qui reste sur toute les pages
+  - objectif de cet aprem : refonte style session page, et commencer la creation et communication avec la db
