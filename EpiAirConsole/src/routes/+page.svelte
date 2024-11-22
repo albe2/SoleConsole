@@ -4,11 +4,48 @@
     let randomNumber: number;
 
     randomNumber = Math.floor(Math.random() * 90000) + 10000;
+
+    function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    }
+
+    function sessionRedirection(user: boolean) : void {
+        if (!user) {
+            createSession();
+        } else {
+            goto(`/joinSession`);
+        }
+        return;
+    }
+
+    async function createSession(): Promise<void> {
+        try {
+            const response = await fetch('/API/createSession', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ accessID: randomNumber.toString() }),
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.json();
+                console.error('Failed to create session:', errorMessage);
+                alert('Failed to create session. Please try again.');
+                return;
+            }
+
+            goto(`/${randomNumber}`);
+        } catch (error) {
+            console.error('An error occurred:', error);
+            alert('An error occurred while creating the session. Please try again.');
+        }
+    }
 </script>
 
 
 <div class="flex w-full h-full justify-center items-center">
-    <video autoplay loop muted class="absolute w-auto min-w-full min-h-full max-w-none brightness-75">
+    <video autoplay loop muted class="absolute w-full h-full object-cover brightness-75">
         <source src="/aqua.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
@@ -19,7 +56,7 @@
         </div>
         <button
                 class="bg-black rounded w-1/2 h-1/3 font-bold text-lg"
-                on:click={() => goto(`/${randomNumber}`)}
+                on:click={() => sessionRedirection(isMobile())}
         > Start Playing Now </button>
     </div>
 </div>

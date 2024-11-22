@@ -17,9 +17,14 @@
     onMount(() => {
         generateQRCode();
     });
+
+    function isMobile() {
+        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    }
 </script>
 
-<div class="flex flex-col w-full h-1/2 justify-center items-center self-center">
+{#if !isMobile()}
+<div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
     <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
         <h1> Connect ur Phones As Controller </h1>
         <p> and lets have fun :) </p>
@@ -35,3 +40,6 @@
         {/if}
     </div>
 </div>
+{:else}
+    <p> CACA </p>
+{/if}
