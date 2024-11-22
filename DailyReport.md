@@ -137,3 +137,11 @@
 - Matinée:
   - apres des galere a comprendre tailwind j'ai reussi a finir un premier jet de ma home page avec son background un un header qui reste sur toute les pages
   - objectif de cet aprem : refonte style session page, et commencer la creation et communication avec la db
+- Apres-Midi:
+  - J'ai donc fait une route api et son appel dans la home page pour cree une session celon l'id generer
+  - fait en sortre d'avoir des pages différentes entre mobile et web, mais de certaines maniere a reperer rellement si l'utilisateur et sur telephone et non par la taille de l'ecran
+  - cree et lie, la creation du user, et essayer d'implementer la liaison a la session
+  - mais il y as bcp de choses que je n'aivais pas pris en compte, il faut que je retravaille un peu ma maniere de faire avant de tous lie
+  - il faut gerer avec les tokens si l'utilisateur a deja un compte ... 
+  - en soit la grosse parti des routes pour cree le user correctment, le lié sont faite, il me manque de trouver un moyen efficace (surement avec le local storage ), de garder le user pour le retrouver celon son od et non sur name
+  - je n'ai pas encore trop travailler sur la securiter dans le sens ou je ne verifie pas encore dans mes appel les retour (du  moins pas comme je le veux au final), je ne regarde pas encroe si il as deja un user ( comme expliquer ci dessus )
