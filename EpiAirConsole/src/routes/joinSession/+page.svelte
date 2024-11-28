@@ -10,7 +10,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ sessionID: inputValue, username: localStorage.getItem('user') }),
+                body: JSON.stringify({ sessionCode: inputValue, userID: localStorage.getItem('userId')}),
             });
 
             if (!response.ok) {

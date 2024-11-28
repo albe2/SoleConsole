@@ -1,10 +1,6 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
 
-    let randomNumber: number;
-
-    randomNumber = Math.floor(Math.random() * 90000) + 10000;
-
     function isMobile() {
         return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
     }
@@ -13,7 +9,7 @@
         if (!user) {
             createSession();
         } else {
-            goto(`/joinSession`);
+            goto(`/createProfile`);
         }
         return;
     }
@@ -21,11 +17,10 @@
     async function createSession(): Promise<void> {
         try {
             const response = await fetch('/API/createSession', {
-                method: 'POST',
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ accessID: randomNumber.toString() }),
             });
 
             if (!response.ok) {
@@ -35,12 +30,16 @@
                 return;
             }
 
-            goto(`/${randomNumber}`);
+            const { accessID } = await response.json();
+            console.log('Access ID:', accessID);
+
+            goto(`/${accessID}`);
         } catch (error) {
             console.error('An error occurred:', error);
             alert('An error occurred while creating the session. Please try again.');
         }
     }
+
 </script>
 
 

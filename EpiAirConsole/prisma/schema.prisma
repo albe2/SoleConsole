@@ -17,6 +17,6 @@ model Session {
 model User {
   id        Int      @id @unique @default(autoincrement())
   name      String
-  sessionID Int
+  sessionID Int?
   session   Session? @relation(fields: [sessionID], references: [id])
 }

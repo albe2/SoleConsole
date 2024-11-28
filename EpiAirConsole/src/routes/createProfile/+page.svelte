@@ -1,4 +1,4 @@
-<p> create profile page </p><script lang="ts">
+<script lang="ts">
     import {goto} from "$app/navigation";
 
     let inputValue: string = '';
@@ -16,17 +16,19 @@
             if (!response.ok) {
                 const errorMessage = await response.json();
                 console.error('Failed to create user:', errorMessage);
-                alert('Failed to create User. Please try again.');
+                alert('Failed to create user. Please try again.');
                 return;
             }
 
-            localStorage.setItem('user', JSON.stringify(response));
-            goto(`/joinSession`);
+            const data = await response.json();
+            localStorage.setItem('userId', data.userId);
+            goto(`/joinSession`); // Redirige l'utilisateur
         } catch (error) {
             console.error('An error occurred:', error);
-            alert('An error occurred while creating the User. Please try again.');
+            alert('An error occurred while creating the user. Please try again.');
         }
     }
+
 </script>
 
 <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
