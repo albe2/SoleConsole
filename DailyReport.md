@@ -145,3 +145,15 @@
   - il faut gerer avec les tokens si l'utilisateur a deja un compte ... 
   - en soit la grosse parti des routes pour cree le user correctment, le lié sont faite, il me manque de trouver un moyen efficace (surement avec le local storage ), de garder le user pour le retrouver celon son od et non sur name
   - je n'ai pas encore trop travailler sur la securiter dans le sens ou je ne verifie pas encore dans mes appel les retour (du  moins pas comme je le veux au final), je ne regarde pas encroe si il as deja un user ( comme expliquer ci dessus )
+
+# Jeudi 28 Novembre
+- Matinée:
+  - j'ai passer la matinée a refacto mon code, pour essayer ed faire en sorte que l'utilisateur sur telephone, puisse donc cree un pseudo et que ca ajoute un user a la db, et qu'apres il puisse ce lié a une session
+  - partie tres compliqué car j'ai due revoir une partie de mon architecture et de comment j'ai penser mon code
+- Apres-Midi:
+  - grosse session de débugage, a ne pas comprendre pourquoi je n'arrive a communiquer avec ma db
+  - je n'arrivais pas a lie user a une session
+  - apres s'etre acharnée avec prisma, j'ai enfin réussi a connecter mon user avec ma session , donc actuellement tout est lié correctement, l'utilisateur telephone peut donc techniquement se cree un profil et rejoindre une session
+  - il ne manque plus que l'affichage sur la partie web, la page des session sur le telephone
+  - j'ai aussi un probleme de deploy sur vercel que je ne sais pas comment regler
+  - fin d'aprem -> 16h-18 PCP
