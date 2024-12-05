@@ -2,44 +2,94 @@
     import { onMount } from 'svelte';
     import QRCode from 'qrcode';
     import { page } from "$app/stores";
+    import { goto } from '$app/navigation';
 
     let qrCode: string = '';
+    let users: { name: string }[] = [];
 
     const generateQRCode = async () => {
         const data2 = window.location.href;
-        console.log(data2);
         try {
             qrCode = await QRCode.toDataURL(data2);
         } catch (err) {
             console.error('Erreur lors de la génération du QR code', err);
         }
-    }
+    };
+
+    const fetchUsers = async () => {
+        const sessionId = $page.params.sessionId;
+
+        try {
+            const response = await fetch(`/API/getSessionUsers?sessionId=${sessionId}`);
+            if (response.ok) {
+                const data = await response.json();
+                users = data.userNames.map((name: string) => ({ name }));
+                console.log(users);
+            } else {
+                if (response.status === 401) {
+                    console.error('Session non autorisée, redirection vers la page d\'accueil.');
+                    goto('/');
+                } else {
+                    console.error('Erreur lors de la récupération des utilisateurs');
+                }
+            }
+        } catch (err) {
+            console.error('Erreur réseau', err);
+        }
+    };
+
+
     onMount(() => {
         generateQRCode();
+        fetchUsers();
     });
 
     function isMobile() {
         return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
     }
+
+    const getRandomColor = () => {
+        const colors = ['#FF5733', '#33FF57', '#5733FF', '#FFC300', '#C70039'];
+        return colors[Math.floor(Math.random() * colors.length)];
+    };
 </script>
 
 {#if !isMobile()}
-<div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
-    <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
-        <h1> Connect ur Phones As Controller </h1>
-        <p> and lets have fun :) </p>
+    <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
+        <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
+            <h1> Connect ur Phones As Controller </h1>
+            <p> and lets have fun :) </p>
+        </div>
+        <div class="flex flex-col w-1/5 h-10 justify-center items-center bg-emerald-600 rounded m-10">
+            <p> {$page.params.sessionId} </p>
+        </div>
+        <div class="flex m-10 justify-center items-center">
+            {#if qrCode}
+                <img src={qrCode} alt="QR Code" />
+            {:else}
+                <p>Chargement du QR code...</p>
+            {/if}
+        </div>
+        <div class="flex flex-wrap justify-center items-center">
+            {#each users as user}
+                <div class="w-16 h-16 flex justify-center items-center rounded-full text-white text-xl font-bold m-2"
+                     style="background-color: {getRandomColor()}">
+                    {user.name.charAt(0).toUpperCase()}
+                </div>
+            {/each}
+        </div>
     </div>
-    <div class="flex flex-col w-1/5 h-10 justify-center items-center bg-emerald-600 rounded m-10">
-        <p> {$page.params.sessionId} </p>
-    </div>
-    <div class="flex m-10 justify-center items-center">
-        {#if qrCode}
-            <img src={qrCode} alt="QR Code" />
-        {:else}
-            <p>Chargement du QR code...</p>
-        {/if}
-    </div>
-</div>
 {:else}
     <p> CACA </p>
 {/if}
+
+<style>
+    h1 {
+        color: white;
+        font-size: 2rem;
+    }
+    p {
+        color: white;
+        font-size: 1rem;
+    }
+</style>

@@ -157,3 +157,15 @@
   - il ne manque plus que l'affichage sur la partie web, la page des session sur le telephone
   - j'ai aussi un probleme de deploy sur vercel que je ne sais pas comment regler
   - fin d'aprem -> 16h-18 PCP
+
+# Vendredri 29 Novembre
+- Matinée:
+  - Grosse galere avec vercel pour le deployement de mon app
+  - en fin de matinée j'ai enfin réussi a regler le probleme de deploye, il manquant juste une commande de build pour build ma db
+
+# Jeudi 05 Decembre
+- Matinée:
+  - a faire pour aujourd'hui: rediriger si pas bonne session url, affichage user, affichage mobile -> pour objectif de cet semaine: avoir un premier jet stable pour commencer a implementer les jeu 
+  - va falloir aussi que je pense a faire qqch pour la deletion des session dans un certain temps donner  . . . pour pas crée des session infiniement et que si ya pas de user pendant un temps dessus ca le delete ...
+  - de meme pour le mobile detecter si il n'est pas connecter sur la page depuis un temps le supprimer de toute ces session ...
+  - j'ai get tout les user d'une session et réussi a l'afficher sur ma page un profile par rapport a leur name 
