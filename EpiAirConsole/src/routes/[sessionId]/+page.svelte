@@ -72,13 +72,12 @@
 
 
     onMount(() => {
-        isConnected();
+        isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        if (!isMobileDevice) {
+            isConnected();
+        }
         generateQRCode();
         fetchUsers();
-    });
-
-    onMount(() => {
-        isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
     });
 
     const getRandomColor = () => {
