@@ -185,3 +185,4 @@
   - (15h15) j'ai presque finis de faire un style "convenable", juste centrer sur mobile et refaire le responsive de la home, deplus je viens de trouver un petit beug quand j'ai supprimer les user de ma db et que je scan le qr code pour rejoindre ca me renvoie une erreur (logique)
   - (15h30) j'ai finis le style mais j'ai encore des probleme de con par rapport a ce fameux beug
   - (15h50) j'ai enfin réussi de régler le beug en fait je ne fesait pas le bon call a la db, et de fix en fix je ne voyait pas les erreur bete dans ma correction comme le fait de ne pas passer le bon id ...
+  - ce qu'il me reste a faire c'est des websocket pour verifier la connexion de user pour eviter de reload la page, et ensuite c'est de commencer a integrer un jeu et enfin faire les websocket pour jouer au jeu depuis le telephone
