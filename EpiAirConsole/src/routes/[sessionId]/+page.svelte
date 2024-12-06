@@ -6,6 +6,7 @@
 
     let qrCode: string = '';
     let users: { name: string }[] = [];
+    let isMobileDevice = false;
 
     const generateQRCode = async () => {
         const data2 = window.location.href;
@@ -44,9 +45,9 @@
         fetchUsers();
     });
 
-    function isMobile() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-    }
+    onMount(() => {
+        isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+    });
 
     const getRandomColor = () => {
         const colors = ['#FF5733', '#33FF57', '#5733FF', '#FFC300', '#C70039'];
@@ -54,7 +55,7 @@
     };
 </script>
 
-{#if !isMobile()}
+{#if !isMobileDevice}
     <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
         <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
             <h1> Connect ur Phones As Controller </h1>
