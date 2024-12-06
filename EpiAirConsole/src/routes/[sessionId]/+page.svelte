@@ -11,6 +11,7 @@
 
     async function joinSession(): Promise<void> {
         try {
+            alert(window.location.href + client)
             const response = await fetch('/API/joinSession', {
                 method: 'POST',
                 headers: {
@@ -33,8 +34,10 @@
 
     const isConnected = async () => {
         if (client) {
+            alert("ur are conneted to the session. ");
             joinSession();
         } else {
+            alert("ur are not conneted");
             goto(`/createProfile`);
         }
     };

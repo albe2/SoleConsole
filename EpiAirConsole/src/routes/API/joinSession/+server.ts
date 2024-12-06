@@ -17,8 +17,10 @@ export const POST = async ({ request }) => {
             },
         });
 
+        console.log(existingSession);
+
         if (!existingSession) {
-            throw error(400, 'No session found for the session');
+            throw error(400, 'No session found for the sessionID');
         }
 
         const userId = parseInt( body.userID );
