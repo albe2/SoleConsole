@@ -162,6 +162,8 @@
 - Matinée:
   - Grosse galere avec vercel pour le deployement de mon app
   - en fin de matinée j'ai enfin réussi a regler le probleme de deploye, il manquant juste une commande de build pour build ma db
+- Apres-Midi:
+  - j'ai boulié de noter je me souviens plus ^^
 
 # Jeudi 05 Decembre
 - Matinée:
@@ -179,4 +181,5 @@
   - je vais devoir commencer a implementer les websocket mais avant ca j'aimerais revoir vite fait mon archi et surtout avoir un truc plus propre avant de m'aventurer la dedans, je vais faire les truc basic que j'ai pas fait avant comme veririfer si il as deja un user en local . . . par rapport a ca d'ailleurs je sais pas si compte faire genre des compte ou tu remet ton pseudo si ya pas ton user dans le local storage, . . .
 - Apres-Midi:
   - j'ai des probleme de connections de user sur le telephone ca me redirige mal ... je vais essayer de regler ca en ce debut d'apres
-  - (15h) apres avoir trouver quelque probleme et fait une peu de debugage, il as y avait des petite erreur betes comme un boolean mal changer, ou encore l'envoie comple de l'url plutot que la sessionID, maintenant je vais jsute corriger le style du mobile avant de start les websocket
+  - (14h50) apres avoir trouver quelque probleme et fait une peu de debugage, il as y avait des petite erreur betes comme un boolean mal changer, ou encore l'envoie comple de l'url plutot que la sessionID, maintenant je vais jsute corriger le style du mobile avant de start les websocket
+  - (15h15) j'ai presque finis de faire un style "convenable", juste centrer sur mobile et refaire le responsive de la home, deplus je viens de trouver un petit beug quand j'ai supprimer les user de ma db et que je scan le qr code pour rejoindre ca me renvoie une erreur (logique)
