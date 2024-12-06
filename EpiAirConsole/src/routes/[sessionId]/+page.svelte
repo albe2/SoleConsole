@@ -11,13 +11,14 @@
 
     async function joinSession(): Promise<void> {
         try {
+            const sessionCode = new URL(window.location.href).pathname.split('/').pop();
             alert(window.location.href + client)
             const response = await fetch('/API/joinSession', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ sessionCode: window.location.href, userID: client}),
+                body: JSON.stringify({ sessionCode: sessionCode, userID: client}),
             });
 
             if (!response.ok) {
