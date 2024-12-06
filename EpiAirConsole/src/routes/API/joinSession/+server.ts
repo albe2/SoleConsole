@@ -22,7 +22,7 @@ export const POST = async ({ request }) => {
         }
 
         const userId = parseInt( body.userID );
-        const user = await client.session.findUnique({
+        const user = await client.user.findUnique({
             where: {
                 id: body.userID,
             },
