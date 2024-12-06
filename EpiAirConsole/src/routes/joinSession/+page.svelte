@@ -1,7 +1,10 @@
 <script lang="ts">
     import {goto} from "$app/navigation";
+    import {onMount} from "svelte";
 
     let inputValue: string = '';
+    let client = localStorage.getItem('userId');
+
 
     async function joinSession(): Promise<void> {
         try {
@@ -10,7 +13,7 @@
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ sessionCode: inputValue, userID: localStorage.getItem('userId')}),
+                body: JSON.stringify({ sessionCode: inputValue, userID: client}),
             });
 
             if (!response.ok) {
@@ -26,6 +29,18 @@
             alert('An error occurred while creating the session. Please try again.');
         }
     }
+
+    const isConnected = async () => {
+        if (client) {
+            return;
+        } else {
+            goto(`/createProfile`);
+        }
+    };
+
+    onMount(() => {
+        isConnected();
+    });
 </script>
 
 <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">

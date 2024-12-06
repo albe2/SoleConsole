@@ -7,6 +7,37 @@
     let qrCode: string = '';
     let users: { name: string }[] = [];
     let isMobileDevice = false;
+    let client = localStorage.getItem('userId');
+
+    async function joinSession(): Promise<void> {
+        try {
+            const response = await fetch('/API/joinSession', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ sessionCode: window.location.href, userID: client}),
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.json();
+                console.error('Failed to create session:', errorMessage);
+                alert('Failed to create session. Please try again.');
+                return;
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+            alert('An error occurred while creating the session. Please try again.');
+        }
+    }
+
+    const isConnected = async () => {
+        if (client) {
+            joinSession();
+        } else {
+            goto(`/createProfile`);
+        }
+    };
 
     const generateQRCode = async () => {
         const data2 = window.location.href;
@@ -41,6 +72,7 @@
 
 
     onMount(() => {
+        isConnected();
         generateQRCode();
         fetchUsers();
     });

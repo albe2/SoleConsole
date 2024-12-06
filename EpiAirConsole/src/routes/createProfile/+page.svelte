@@ -22,7 +22,7 @@
 
             const data = await response.json();
             localStorage.setItem('userId', data.userId);
-            goto(`/joinSession`); // Redirige l'utilisateur
+            goto(`/joinSession`);
         } catch (error) {
             console.error('An error occurred:', error);
             alert('An error occurred while creating the user. Please try again.');
