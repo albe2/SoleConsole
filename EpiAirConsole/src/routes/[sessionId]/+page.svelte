@@ -7,7 +7,7 @@
     let qrCode: string = '';
     let users: { name: string }[] = [];
     let isMobileDevice = false;
-    let client = localStorage.getItem('userId');
+    let client: string | null = null;
 
     async function joinSession(): Promise<void> {
         try {
@@ -73,6 +73,7 @@
 
     onMount(() => {
         isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        client = localStorage.getItem('userId');
         if (isMobileDevice) {
             isConnected();
         }
