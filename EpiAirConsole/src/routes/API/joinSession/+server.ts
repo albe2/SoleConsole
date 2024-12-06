@@ -22,6 +22,16 @@ export const POST = async ({ request }) => {
         }
 
         const userId = parseInt( body.userID );
+        const user = await client.session.findUnique({
+            where: {
+                id: body.userID,
+            },
+        });
+
+        if (!user) {
+            throw error(401, 'Missing required "userID" field');
+        }
+
         await client.user.update({
             where: {
                 id: userId,
@@ -38,6 +48,12 @@ export const POST = async ({ request }) => {
     } catch (err) {
         console.error('Error linking user to session:', err);
 
+        if (err.status === 401 || err.status === 400) {
+            return new Response(
+                JSON.stringify({ message: err.message }),
+                { status: err.status, headers: { 'Content-Type': 'application/json' } }
+            );
+        }
         return new Response(JSON.stringify({ message: 'Failed to link user to session' }), {
             status: 500,
             headers: { 'Content-Type': 'application/json' },

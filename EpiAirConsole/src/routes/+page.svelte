@@ -63,7 +63,7 @@
             > Start Playing Now </button>
         {:else}
             <button
-                    class="bg-black rounded w-1/2 h-1/4 font-bold text-lg"
+                    class="bg-black rounded w-1/2 h-1/3 font-bold text-lg"
                     on:click={() => sessionRedirection(isMobileDevice)}
             > Start Playing Now </button>
         {/if}

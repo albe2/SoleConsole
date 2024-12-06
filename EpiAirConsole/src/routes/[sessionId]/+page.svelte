@@ -21,10 +21,13 @@
             });
 
             if (!response.ok) {
-                const errorMessage = await response.json();
-                console.error('Failed to create session:', errorMessage);
-                alert('Failed to create session. Please try again.');
-                return;
+                if (response.status === 401) {
+                    console.error('userID not found. ');
+                    goto('/createProfile');
+                } else {
+                    alert('Failed to join session. Please try again.');
+                    return;
+                }
             }
         } catch (error) {
             console.error('An error occurred:', error);
@@ -90,8 +93,8 @@
 
 {#if !isMobileDevice}
     <div class="flex flex-row w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
-        <div class="flex flex-col w-full h-full justify-center items-center">
-            <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
+        <div class="flex flex-col w-1/2 h-full justify-center items-center">
+            <div class="flex flex-col w-full h-1/5 justify-between items-center">
                  <h1> Connect ur Phones As Controller </h1>
                  <p> and lets have fun :) </p>
              </div>
@@ -106,7 +109,7 @@
                  {/if}
              </div>
         </div>
-        <div class="flex flex-wrap justify-center items-center">
+        <div class="flex flex-wrap w-1/2 h-full justify-center items-center">
             {#each users as user}
                 <div class="w-16 h-16 flex justify-center items-center rounded-full text-white text-xl font-bold m-2"
                      style="background-color: {getRandomColor()}">
