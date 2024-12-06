@@ -183,3 +183,5 @@
   - j'ai des probleme de connections de user sur le telephone ca me redirige mal ... je vais essayer de regler ca en ce debut d'apres
   - (14h50) apres avoir trouver quelque probleme et fait une peu de debugage, il as y avait des petite erreur betes comme un boolean mal changer, ou encore l'envoie comple de l'url plutot que la sessionID, maintenant je vais jsute corriger le style du mobile avant de start les websocket
   - (15h15) j'ai presque finis de faire un style "convenable", juste centrer sur mobile et refaire le responsive de la home, deplus je viens de trouver un petit beug quand j'ai supprimer les user de ma db et que je scan le qr code pour rejoindre ca me renvoie une erreur (logique)
+  - (15h30) j'ai finis le style mais j'ai encore des probleme de con par rapport a ce fameux beug
+  - (15h50) j'ai enfin réussi de régler le beug en fait je ne fesait pas le bon call a la db, et de fix en fix je ne voyait pas les erreur bete dans ma correction comme le fait de ne pas passer le bon id ...
