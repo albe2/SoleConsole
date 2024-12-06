@@ -1,9 +1,8 @@
 <script lang="ts">
     import { goto } from '$app/navigation';
+    import {onMount} from "svelte";
 
-    function isMobile() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-    }
+    let isMobileDevice = false;
 
     function sessionRedirection(user: boolean) : void {
         if (!user) {
@@ -38,6 +37,10 @@
             console.error('An error occurred:', error);
             alert('An error occurred while creating the session. Please try again.');
         }
+
+        onMount(() => {
+            isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
+        });
     }
 
 </script>
@@ -48,14 +51,21 @@
         <source src="/aqua.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
-    <div class="flex flex-col z-10 w-1/2 h-1/5 justify-between items-center mb-4">
+    <div class="flex flex-col z-10 w-full h-1/3 justify-between items-center mb-4">
         <div class="flex flex-col w-full h-2/3 justify-evenly items-center">
-            <h1 class="text-4xl"> Play Games </h1>
-            <p class="font-bold text-3xl"> With your friends </p>
+            <h1 class="text-4xl text-center"> Play Games </h1>
+            <p class="font-bold text-3xl text-center"> With your friends </p>
         </div>
-        <button
-                class="bg-black rounded w-1/2 h-1/3 font-bold text-lg"
-                on:click={() => sessionRedirection(isMobile())}
-        > Start Playing Now </button>
+        {#if !isMobileDevice}
+            <button
+                    class="bg-black rounded w-1/4 h-1/4 font-bold text-lg"
+                    on:click={() => sessionRedirection(isMobileDevice)}
+            > Start Playing Now </button>
+        {:else}
+            <button
+                    class="bg-black rounded w-1/2 h-1/4 font-bold text-lg"
+                    on:click={() => sessionRedirection(isMobileDevice)}
+            > Start Playing Now </button>
+        {/if}
     </div>
 </div>

@@ -89,20 +89,22 @@
 </script>
 
 {#if !isMobileDevice}
-    <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
-        <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
-            <h1> Connect ur Phones As Controller </h1>
-            <p> and lets have fun :) </p>
-        </div>
-        <div class="flex flex-col w-1/5 h-10 justify-center items-center bg-emerald-600 rounded m-10">
-            <p> {$page.params.sessionId} </p>
-        </div>
-        <div class="flex m-10 justify-center items-center">
-            {#if qrCode}
-                <img src={qrCode} alt="QR Code" />
-            {:else}
-                <p>Chargement du QR code...</p>
-            {/if}
+    <div class="flex flex-row w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
+        <div class="flex flex-col w-full h-full justify-center items-center">
+            <div class="flex flex-col w-1/2 h-1/5 justify-between items-center">
+                 <h1> Connect ur Phones As Controller </h1>
+                 <p> and lets have fun :) </p>
+             </div>
+             <div class="flex flex-col w-1/5 h-10 justify-center items-center bg-emerald-600 rounded m-10">
+                 <p> {$page.params.sessionId} </p>
+             </div>
+             <div class="flex m-10 justify-center items-center">
+                 {#if qrCode}
+                     <img src={qrCode} alt="QR Code" />
+                 {:else}
+                     <p>Chargement du QR code...</p>
+                 {/if}
+             </div>
         </div>
         <div class="flex flex-wrap justify-center items-center">
             {#each users as user}
@@ -114,13 +116,15 @@
         </div>
     </div>
 {:else}
-    <div class="flex flex-wrap justify-center items-center">
-        {#each users as user}
-            <div class="w-16 h-16 flex justify-center items-center rounded-full text-white text-xl font-bold m-2"
-                 style="background-color: {getRandomColor()}">
-                {user.name.charAt(0).toUpperCase()}
-            </div>
-        {/each}
+    <div class="flex flex-col w-full h-full justify-center items-center self-center bg-gradient-to-b from-[#0900FF] to-[#020037]">
+        <div class="flex flex-wrap justify-center items-center">
+            {#each users as user}
+                <div class="w-16 h-16 flex justify-center items-center rounded-full text-white text-xl font-bold m-2"
+                     style="background-color: {getRandomColor()}">
+                    {user.name.charAt(0).toUpperCase()}
+                </div>
+            {/each}
+        </div>
     </div>
 {/if}
 
