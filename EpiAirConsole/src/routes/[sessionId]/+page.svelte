@@ -25,7 +25,7 @@
                     console.error('userID not found. ');
                     goto('/createProfile');
                 } else {
-                    alert('Failed to join session. Please try again.');
+                    alert( response.statusText );
                     return;
                 }
             }

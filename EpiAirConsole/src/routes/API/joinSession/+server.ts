@@ -29,7 +29,7 @@ export const POST = async ({ request }) => {
         });
 
         if (!user) {
-            throw error(401, 'Missing required "userID" field');
+            throw error(401, ' User does not exist ');
         }
 
         await client.user.update({
