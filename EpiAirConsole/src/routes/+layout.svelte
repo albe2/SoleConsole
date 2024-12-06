@@ -5,6 +5,8 @@
 	import { computePosition, autoUpdate, flip, shift, offset, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
 	storePopup.set({ computePosition, autoUpdate, flip, shift, offset, arrow });
+    document.cookie = "__vercel_live_token=your_token; SameSite=None; Secure";
+
 </script>
 
 <div class="w-full h-full">
