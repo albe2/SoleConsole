@@ -73,7 +73,7 @@
 
     onMount(() => {
         isMobileDevice = /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-        if (!isMobileDevice) {
+        if (isMobileDevice) {
             isConnected();
         }
         generateQRCode();
