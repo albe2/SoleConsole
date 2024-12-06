@@ -177,3 +177,6 @@
   - les users s'affichent donc bien, maintenant il faut que je fasse un display sur la partie telephone, de plus il y as des gros probleme car sur la version deploye rien ne marchent ( concernant rejoindre la session ... j' ai une internal error sur la page de session ), il va aussi falloir que je trouve un moyen d'afficher les user des qu'il se connecte et pas devoir reload la page pour les afficher
   - j'ai réussi a corriger l'internal error sur le deploye maintenenant ca marche bien sur cette version
   - je vais devoir commencer a implementer les websocket mais avant ca j'aimerais revoir vite fait mon archi et surtout avoir un truc plus propre avant de m'aventurer la dedans, je vais faire les truc basic que j'ai pas fait avant comme veririfer si il as deja un user en local . . . par rapport a ca d'ailleurs je sais pas si compte faire genre des compte ou tu remet ton pseudo si ya pas ton user dans le local storage, . . .
+- Apres-Midi:
+  - j'ai des probleme de connections de user sur le telephone ca me redirige mal ... je vais essayer de regler ca en ce debut d'apres
+  - (15h) apres avoir trouver quelque probleme et fait une peu de debugage, il as y avait des petite erreur betes comme un boolean mal changer, ou encore l'envoie comple de l'url plutot que la sessionID, maintenant je vais jsute corriger le style du mobile avant de start les websocket
