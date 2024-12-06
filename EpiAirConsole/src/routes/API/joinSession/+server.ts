@@ -17,8 +17,6 @@ export const POST = async ({ request }) => {
             },
         });
 
-        console.log(existingSession);
-
         if (!existingSession) {
             throw error(400, 'No session found for the sessionID');
         }
