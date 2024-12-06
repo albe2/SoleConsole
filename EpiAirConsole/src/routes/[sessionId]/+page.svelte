@@ -80,7 +80,14 @@
         </div>
     </div>
 {:else}
-    <p> CACA </p>
+    <div class="flex flex-wrap justify-center items-center">
+        {#each users as user}
+            <div class="w-16 h-16 flex justify-center items-center rounded-full text-white text-xl font-bold m-2"
+                 style="background-color: {getRandomColor()}">
+                {user.name.charAt(0).toUpperCase()}
+            </div>
+        {/each}
+    </div>
 {/if}
 
 <style>

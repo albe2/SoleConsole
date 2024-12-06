@@ -32,7 +32,7 @@
     <input
             type="text"
             bind:value={inputValue}
-            placeholder="Enter something"
+            placeholder="Enter Session Code"
             class="p-2 border rounded-md text-black"
     />
     <button

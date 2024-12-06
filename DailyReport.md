@@ -169,3 +169,9 @@
   - va falloir aussi que je pense a faire qqch pour la deletion des session dans un certain temps donner  . . . pour pas crée des session infiniement et que si ya pas de user pendant un temps dessus ca le delete ...
   - de meme pour le mobile detecter si il n'est pas connecter sur la page depuis un temps le supprimer de toute ces session ...
   - j'ai get tout les user d'une session et réussi a l'afficher sur ma page un profile par rapport a leur name 
+- Apres-Midi:
+  - BDE (dsl guillaume )
+
+# Vendredi 06 Decembre
+- Matinée:
+  - les users s'affichent donc bien, maintenant il faut que je fasse un display sur la partie telephone, de plus il y as des gros probleme car sur la version deploye rien ne marchent ( concernant rejoindre la session ... j' ai une internal error sur la page de session ), il va aussi falloir que je trouve un moyen d'afficher les user des qu'il se connecte et pas devoir reload la page pour les afficher
