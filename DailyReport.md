@@ -186,3 +186,24 @@
   - (15h30) j'ai finis le style mais j'ai encore des probleme de con par rapport a ce fameux beug
   - (15h50) j'ai enfin réussi de régler le beug en fait je ne fesait pas le bon call a la db, et de fix en fix je ne voyait pas les erreur bete dans ma correction comme le fait de ne pas passer le bon id ...
   - ce qu'il me reste a faire c'est des websocket pour verifier la connexion de user pour eviter de reload la page, et ensuite c'est de commencer a integrer un jeu et enfin faire les websocket pour jouer au jeu depuis le telephone
+
+# Jeudi 12 Decembre
+- Matinée:
+  - j'ai passer la matinée a regler des probleme de deploy, pour une raison obscur mon deploy etait beuguer, puis apres grace a theo j'ai decouver que sur vercel il y avait une conole pour voir les logs 
+- Apres-Midi:
+  - j'ai finis de corriger mes probleme de deploy
+  - J'ai commencer a me renseigner sur les websocket, mais ca m'as l'aire complexe surtout je ne sais pas si c'est compatible avec svelte
+  - fin d'aprem j'ai revue mes maquette pour la suite et esseyer avant d'integer des wxebsocket de corriger et rendre plus propre mon archi
+
+# Vendredi 13 Decembre et plus
+- Matinée:
+  - pas tres productif ( Je pense que je vais arreter de m'inscrire au susie, ca me coupe totalement la matinée, a l'arriver je n'ai pas lomgtemps avant d'avoir susie et apres en une heure je peux commencer pour finalement me faire couper par les repas, je sais que c'est une excuse mais voila en terme d'orga perso je vais arreter les susie le matin)
+- Apres-Midi:
+  - comme les websocket ca tres rapidement saoulé, j'ai souhaiter commencer a integrer un jeu mais pour cel ail me faut installer unity
+  - j'ai passer une bonne partie de l'aprem a me battre avec unity pour finalement abandoné
+  - j'ai pour but de le faire sur mon pc perso puis de l'integrer une fois un jeu simple et con fait
+  - fin d'aprem je part pour preparer la lan pour le BDE
+  - Pendant la LAN, j'ai donc fait un jeu type flappy bird, puis fait des tentative d'integration
+  - j'ai eu des gros probleme pour ne serait-ce que réusssir a build mon projet
+  - apres 2h de tentative a la chaine en changeant parci par la quelque option, j'ai réussi
+  - l'integration web n'etait pas complexe avec un petit tuto youtube le tout etait vite fait

@@ -89,6 +89,11 @@
         const colors = ['#FF5733', '#33FF57', '#5733FF', '#FFC300', '#C70039'];
         return colors[Math.floor(Math.random() * colors.length)];
     };
+
+    function gameRedirection() : void {
+        goto(`/game`);
+        return;
+    }
 </script>
 
 {#if !isMobileDevice}
@@ -116,6 +121,9 @@
                     {user.name.charAt(0).toUpperCase()}
                 </div>
             {/each}
+        </div>
+        <div>
+            <button on:click={() => gameRedirection()} class="bg-black rounded w-1/2 h-1/3 font-bold text-lg"> Play </button>
         </div>
     </div>
 {:else}
